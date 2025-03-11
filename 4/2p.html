@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documento</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6 form-container">
+
+     
+      <h2 class="text-center form-header mb-4 mt-4">LCDO. RICARDO MORALES HERNÁNDEZ
+        DIRECTOR JURÍDICO DEL CENTRO FEDERAL
+        DE READAPTACIÓN SOCIAL NO.13 “CPS-OAXACA”
+        FIRMA EN SUPLENCIA DEL DIRECTOR JURÍDICO 
+        EL LCDO. FRANCISCO JAVIER DIAZ RAMIREZ
+        JEFE DEL DEPARTAMENTO JURÍDICO PENITENCIARIO.</h2>
+      <form id="myForm" >
+ 
+        <div class="form-group">
+          <label for="noficio">Número de Documento</label>
+              <input type="number" class="form-control" id="noficio" name="noficio" oninput="validatePositiveNumber(this)">
+        </div>
+        <div class="form-group">
+          <label for="fecha">Fecha del Oficio</label>
+          <div class="form-row">
+            <div class="col">
+              <select class="form-control" id="dia" name="dia" >
+                <option value="" disabled selected>Día</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+                
+              </select>
+            </div>
+            <div class="col">
+              <select class="form-control" id="mes" name="mes" >
+                <option value="" disabled selected>Mes</option>
+                <option value="enero">Enero</option>
+                <option value="febrero">Febrero</option>
+                <option value="marzo">Marzo</option>
+                <option value="abril">Abril</option>
+                <option value="mayo">Mayo</option>
+                <option value="junio">Junio</option>
+                <option value="julio">Julio</option>
+                <option value="agosto">Agosto</option>
+                <option value="septiembre">Septiembre</option>
+                <option value="octubre">Octubre</option>
+                <option value="noviembre">Noviembre</option>
+                <option value="diciembre">Diciembre</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+            <label for="folio">Folio:</label>
+          <input type="text" class="form-control" id="folio" name="folio">
+        </div>
+        <div class="form-group">
+          <label for="name">Oficio</label>
+          <select class="form-control" id="oficio" name="oficio">
+            <option value="" disabled selected>Seleccione la opción</option>
+            <option value="DG">DG</option>
+            <option value="DG/DJ">DG/DJ</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="noficio">Número de Oficio</label>
+              <input type="number" class="form-control" id="oficio2" name="oficio2" oninput="validatePositiveNumber(this)">
+        </div>
+
+
+        <div class="form-group">
+          <label for="nombre">Imputado 1:</label>
+        <input type="text" class="form-control" id="nombre1" name="nombre1"  oninput="convertirAMayusculas(this)">
+      </div>
+
+      <div class="form-group">
+        <label for="nombre">Imputado 2:</label>
+      <input type="text" class="form-control" id="nombre2" name="nombre2"  oninput="convertirAMayusculas(this)">
+    </div>
+
+      
+  
+    
+
+
+      <div class="form-row">
+        <div class="col">
+          <button
+            type="button"
+            class="btn btn-custom btn-md"
+            onclick="location='../index.html'"
+          >
+            Regresar al Menú
+          </button>
+        </div>
+        <div class="col">
+            <button
+            type="button"
+            class="btn btn-custom btn-md"
+            onclick="generateDocument()"
+          >
+            Generar Documento
+          </button>
+        </div>
+      </div>
+          </form>
+          </div>
+      
+    </div>
+  </div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/pizzip@3.1.1/dist/pizzip.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/docxtemplater@3.27.1/build/docxtemplater.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js"></script>
+<script src="../js/documentos/4/2p.js"></script>
+<script src="js/mayus.js"></script>
+
+<!-- <script src="js/validar.js"></script> -->
+</body>
+</html>
